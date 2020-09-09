@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.moras</groupId>
-    <artifactId>algorithmsapi</artifactId>
+    <artifactId>algorithms</artifactId>
     <version>1.0</version>
-
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

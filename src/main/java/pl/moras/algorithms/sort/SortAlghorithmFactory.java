@@ -1,6 +1,4 @@
-package pl.moras.algorithmsapi.sort;
-
-import pl.moras.algorithmsapi.search.Search;
+package pl.moras.algorithms.sort;
 
 import java.lang.reflect.InvocationTargetException;
 

@@ -1,4 +1,4 @@
-package pl.moras.algorithmsapi.sort;
+package pl.moras.algorithms.sort;
 
 public abstract class Sort<T> {
 

@@ -1,4 +1,4 @@
-package pl.moras.algorithmsapi;
+package pl.moras.algorithms;
 
 import java.util.Objects;
 

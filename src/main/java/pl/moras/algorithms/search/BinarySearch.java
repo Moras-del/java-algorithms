@@ -1,6 +1,4 @@
-package pl.moras.algorithmsapi.search;
-
-import java.util.Arrays;
+package pl.moras.algorithms.search;
 
 public class BinarySearch<T extends Comparable<T>> extends Search<T>{
 

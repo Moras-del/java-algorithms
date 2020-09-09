@@ -1,4 +1,4 @@
-package pl.moras.algorithmsapi.search;
+package pl.moras.algorithms.search;
 
 public class LinearSearch<T> extends Search<T> {
 

@@ -1,14 +1,13 @@
-package pl.moras.algorithmsapi.search;
+package pl.moras.algorithms.search;
 
 import java.lang.reflect.InvocationTargetException;
 
 public class SearchAlgorithmFactory {
 
 
-    public static <T> Search<T> create(Class<? extends Search> alghorithmImpl, T[] array){
+    public static <T> Search<T> create(Class<? extends Search> alghorithmImpl){
         try {
             Search<T> search = alghorithmImpl.getDeclaredConstructor().newInstance();
-            search.setArray(array);
             return search;
         } catch (InstantiationException e) {
             e.printStackTrace();

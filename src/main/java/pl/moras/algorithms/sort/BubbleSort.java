@@ -1,4 +1,4 @@
-package pl.moras.algorithmsapi.sort;
+package pl.moras.algorithms.sort;
 
 
 public class BubbleSort<T extends Comparable> extends Sort<T> {
