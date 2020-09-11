@@ -13,7 +13,7 @@ public class Person implements Comparable<Person>{
     }
 
     public static Person[] getData(){
-        return new Person[]{new Person("kate", 40), new Person("adam", 30), new Person("mike", 20)};
+        return new Person[]{new Person("kate", 20), new Person("adam", 30), new Person("mike", 40)};
     }
 
     @Override
