@@ -9,15 +9,15 @@ public class BinarySearch<T extends Comparable<T>> extends Search<T>{
     }
 
     int binarySearch(T item, int low, int high){
-        if (low <= high){
-            int mid = low+(high-low)/2;
-            if (array[mid].equals(item)){
-                return mid;
-            }
-            if (array[mid].compareTo(item) > 0){
-                return binarySearch(item, low, mid-1);
-            }
-            return binarySearch(item, mid+1, high);
+        int pointer = 0;
+        while (low <= high){
+            pointer = low+(high-low)/2;
+            if (array[pointer].equals(item))
+                return pointer;
+            else if (array[pointer].compareTo(item) > 0)
+                high = pointer-1;
+            else
+                low = pointer+1;
         }
         return -1;
     }

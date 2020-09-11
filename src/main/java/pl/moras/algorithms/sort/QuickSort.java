@@ -1,5 +1,7 @@
 package pl.moras.algorithms.sort;
 
+import java.lang.reflect.Array;
+
 public class QuickSort<T extends Comparable> extends Sort<T>{
 
     @Override
@@ -12,18 +14,31 @@ public class QuickSort<T extends Comparable> extends Sort<T>{
 
 
     void quickSort(T[] array, int low, int high){
-        if (low < high){
+        int[] stack = new int[high-low+1];
+        int top = -1;
+        stack[++top] = low;
+        stack[++top] = high;
+        while (top >= 0){
+            high = stack[top--];
+            low = stack[top--];
             int pivot = partition(array, low, high);
-            quickSort(array, low, pivot-1);
-            quickSort(array, pivot+1, high);
+            if (pivot -1 > low){
+                stack[++top] = low;
+                stack[++top] = pivot-1;
+            }
+            if (pivot+1 < high){
+                stack[++top] = pivot+1;
+                stack[++top] = high;
+            }
         }
+
     }
 
     int partition(T[] array, int low, int high){
-        T item = array[high];
+        T pivot = array[high];
         int i = low-1;
         for (int j = low; j < high; j++){
-            if (array[j].compareTo(item) < 0){
+            if (array[j].compareTo(pivot) < 0){
                 i++;
                 swap(array, i, j);
             }
