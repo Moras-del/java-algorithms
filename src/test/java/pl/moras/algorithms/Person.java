@@ -12,10 +12,6 @@ public class Person implements Comparable<Person>{
         this.age = age;
     }
 
-    public static Person[] getData(){
-        return new Person[]{new Person("kate", 20), new Person("adam", 30), new Person("mike", 40)};
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

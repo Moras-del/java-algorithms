@@ -11,27 +11,24 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static pl.moras.algorithms.TestUtils.createRangeTo;
 
 public class SortTests {
 
     @ParameterizedTest
     @ValueSource(classes = {BubbleSort.class, QuickSort.class})
     void should_sort_integers(Class alghorithmClass){
-        Integer[] arr = new Integer[]{1, 2, 3, 4, 5};
         Sort<Integer> sorter = SortAlghorithmFactory.create(alghorithmClass);
-        Integer[] result = sorter.sortArray(new Integer[]{5, 4, 3, 2, 1});
-        assertArrayEquals(arr, result);
+        Integer[] result = sorter.sortArray(TestUtils.createRangeTo(300, true));
+        assertArrayEquals(createRangeTo(300), result);
     }
 
     @ParameterizedTest
     @ValueSource(classes = {BubbleSort.class, QuickSort.class})
     void should_sort_persons(Class alghorithmClass){
-        Person[] expected = Person.getData();
-        Arrays.sort(expected);
-
+        Person[] expected = TestUtils.getData();
         Sort<Person> sorter = SortAlghorithmFactory.create(alghorithmClass);
-        Person[] actual = sorter.sortArray(Person.getData());
-
+        Person[] actual = sorter.sortArray(TestUtils.getData(true));
         assertArrayEquals(expected, actual);
     }
 
